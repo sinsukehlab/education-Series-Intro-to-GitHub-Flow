@@ -58,12 +58,10 @@ jobs:
       - name: Update to step 1
         uses: skills/action-update-step@v2
         with:
-          token: ${{ secrets.GLOBAL_CLASSROOM_ORG_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
           to_step: 1
           branch_name: my-first-branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GLOBAL_CLASSROOM_ORG_TOKEN }}
 
       # Commits pushed by an Action will not create a new workflow run. To work
       # around this, create a repository_dispatch event to ensure that GitHub
